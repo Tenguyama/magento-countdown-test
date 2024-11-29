@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--
+        З цього файлу я можу міняти ВСІ сторінки товарів
+        -->
+
+        <!--
+        Перше завдання
+        <referenceContainer name="product.info.main">
+            <block name="countdown.timer.one"
+                   before="product.info.extrahint"
+                   class="Kutsa\Countdown\Block\CountdownTimer"
+                   template="Magento_Catalog::countdown_task_1.phtml"/>
+        </referenceContainer>
+        -->
+
+        <!--
+        Друге завдання
+        -->
+        <referenceContainer name="product.info.main">
+            <block name="countdown.timer.two"
+                   before="product.info.extrahint"
+                   class="Kutsa\Countdown\Block\CountdownTimer"
+                   template="Magento_Catalog::countdown_task_2.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <block name="countdown.timer.script"
+            after="-"
+            class="Magento\Framework\View\Element\Template"
+            template="Magento_Catalog::countdown_add_script.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,26 @@
+<?php
+    /** @var \Kutsa\Countdown\Block\CountdownTimer $block */
+
+    $_product = $block->getProduct();
+
+    if ($_product):
+
+        $specialToDate = $_product->getData('special_to_date');
+
+        if($specialToDate):
+            $specialToDate = (new DateTime($specialToDate))->format('Y/m/d H:i:s');
+            ?>
+
+    <div id="special-price-timer"
+         data-end-date="<?php echo $specialToDate; ?>">
+    </div>
+
+<?php
+       else:
+           echo '<p>special_to_date not found</p>';
+       endif;
+
+    else:
+      echo '<p>product not found</p>';
+    endif;
+?>

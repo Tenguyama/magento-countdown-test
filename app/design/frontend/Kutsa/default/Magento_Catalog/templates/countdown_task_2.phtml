@@ -1,0 +1,21 @@
+<?php
+/** @var \Kutsa\Countdown\Block\CountdownTimer $block */
+
+list($endDate, $debugInfo) = $block->calculateEndDate();
+
+// Вивід тестових даних
+foreach ($debugInfo as $debug) {
+    echo $debug;
+}
+
+if ($endDate):
+    ?>
+    <div id="special-price-timer"
+         class="countdown-list"
+         data-end-date="<?php echo $endDate; ?>">
+    </div>
+<?php
+else:
+    echo '<p>endDate not found</p>';
+endif;
+?>
